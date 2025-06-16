@@ -26,5 +26,4 @@ class TenantDatabaseSeeder extends Seeder
         }
 
     }
-
 }

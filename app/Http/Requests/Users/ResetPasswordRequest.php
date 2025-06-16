@@ -20,7 +20,7 @@ class ResetPasswordRequest extends ApiFormRequest
             'email' => [
                 'required',
                 'string',
-                Rule::exists('users', 'email')->whereNull('deleted_at'),
+                Rule::exists('users', 'email'),
             ],
         ];
     }

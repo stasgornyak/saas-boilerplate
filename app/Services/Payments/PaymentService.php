@@ -85,11 +85,11 @@ class PaymentService
             ->with('license')
             ->findOrFail($id);
 
+        $this->ensureUserCanPay($payment->license);
+
         if (! $payment->ext_id) {
             throw new LogicException('external_id_is_not_set');
         }
-
-        $this->ensureUserCanPay($payment->license);
 
         PaymentClientFactory::create()->checkStatus($payment);
 

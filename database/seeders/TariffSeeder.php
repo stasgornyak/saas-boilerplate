@@ -36,5 +36,4 @@ class TariffSeeder extends Seeder
         }
 
     }
-
 }

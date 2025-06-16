@@ -16,14 +16,14 @@ trait HasPaymentFilteringScope
 
     public function scopeWhereLicenseId(Builder $query, int $licenseId, bool $fullColumnName = false): void
     {
-        $column = $fullColumnName ? (new self())->getTable().'.license_id' : 'license_id';
+        $column = $fullColumnName ? (new self)->getTable().'.license_id' : 'license_id';
 
         $query->where($column, $licenseId);
     }
 
     public function scopeWhereStatus(Builder $query, string|PaymentStatus $status, bool $fullColumnName = false): void
     {
-        $column = $fullColumnName ? (new self())->getTable().'.status' : 'status';
+        $column = $fullColumnName ? (new self)->getTable().'.status' : 'status';
         $status = $status instanceof PaymentStatus ? $status->value : $status;
 
         $query->where($column, $status);
@@ -35,5 +35,4 @@ trait HasPaymentFilteringScope
             $query->where('tenant_id', $tenantId);
         });
     }
-
 }

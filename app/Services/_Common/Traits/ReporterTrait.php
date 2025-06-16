@@ -55,5 +55,4 @@ trait ReporterTrait
     {
         return ! empty($this->reports[$channel]);
     }
-
 }

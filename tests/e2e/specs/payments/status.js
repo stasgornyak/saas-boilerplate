@@ -1,4 +1,4 @@
-describe("Get Checkout Url", () => {
+describe("Get Payment status", () => {
   let licenseId, paymentId;
 
   before(() => {
@@ -29,19 +29,22 @@ describe("Get Checkout Url", () => {
 
         paymentId = response.body.data.id;
 
-        cy.request({
+        // Request fails if the monobank test token is not set
+        /*cy.request({
           method: "PATCH",
           url: `/payments/${paymentId}/checkout`,
           toCentral: true,
         }).then((response) => {
           expect(response.status).to.eq(200);
           expect(response.body.message).to.eq("checkoutUrlReceived");
-        });
+        });*/
       });
     });
   });
 
-  it("Payment status obtained", () => {
+    // Test fails if monobank test token is not set
+    // To set monobank token, go to https://monobank.ua/api-docs/acquiring/instrumenty-rozrobky/testuvannia/docs--testing
+    it.skip("Payment status obtained", () => {
     cy.request({
       method: "PATCH",
       url: `/payments/${paymentId}/status`,
