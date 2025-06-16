@@ -13,5 +13,4 @@ trait HasFilteringScope
     {
         return FilterGenerator::addFilters($query, $filters, $fullColumnName);
     }
-
 }

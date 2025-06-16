@@ -57,7 +57,7 @@ class UserService
      */
     public function register(array $userData): array
     {
-        if (User::withTrashed()->whereEmail($userData['email'])->exists()) {
+        if (User::whereEmail($userData['email'])->exists()) {
             throw new LogicException('user_already_exists');
         }
 

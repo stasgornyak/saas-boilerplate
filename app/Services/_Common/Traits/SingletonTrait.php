@@ -31,5 +31,4 @@ trait SingletonTrait
      * SingletonTrait constructor.
      */
     protected function __construct() {}
-
 }

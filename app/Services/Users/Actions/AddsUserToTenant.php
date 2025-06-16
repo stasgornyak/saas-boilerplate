@@ -35,7 +35,7 @@ class AddsUserToTenant
      */
     private function getCentralUser(): User
     {
-        $centralUser = User::withTrashed()->where('email', $this->data['email'])->first();
+        $centralUser = User::where('email', $this->data['email'])->first();
 
         if ($centralUser) {
             $this->ensureUserDoesntExist($centralUser);

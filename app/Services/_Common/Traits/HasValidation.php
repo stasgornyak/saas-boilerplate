@@ -36,5 +36,4 @@ trait HasValidation
     {
         return $data;
     }
-
 }

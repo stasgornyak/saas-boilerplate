@@ -29,5 +29,4 @@ class AsCurrency implements CastsAttributes
             ? $value->code
             : $value;
     }
-
 }

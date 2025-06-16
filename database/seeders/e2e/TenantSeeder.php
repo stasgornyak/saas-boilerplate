@@ -23,12 +23,12 @@ class TenantSeeder extends Seeder
         $data = [
             [
                 'tenant_data' => [
-                        'slug' => 'instance',
-                        'name' => 'Instance',
-                        'tenancy_db_name' => 'saas-boilerplate-instance',
-                        'tenancy_db_password' => 'saas-boilerplate-instance',
-                        'tenancy_db_username' => 'saas-boilerplate-instance',
-                    ],
+                    'slug' => 'instance',
+                    'name' => 'Instance',
+                    'tenancy_db_name' => 'saas-boilerplate-instance',
+                    'tenancy_db_password' => 'saas-boilerplate-instance',
+                    'tenancy_db_username' => 'saas-boilerplate-instance',
+                ],
                 'license_data' => [
                     'valid_from' => now(),
                     'valid_to' => now()->addYear(),
@@ -86,5 +86,4 @@ class TenantSeeder extends Seeder
         }
 
     }
-
 }
